@@ -118,7 +118,7 @@ export default function BlogPost() {
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900">Ramu Kamath</div>
-                      <div className="text-xs text-gray-400">Den Haag, Netherlands</div>
+                      <div className="text-xs text-gray-400">Voorburg, Netherlands</div>
                     </div>
                   </div>
                 </div>

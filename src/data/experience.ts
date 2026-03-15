@@ -33,7 +33,7 @@ export const experiences: ExperienceItem[] = [
     company: 'NN Investment Partners',
     role: 'Freelance Senior Data Platform Engineer',
     period: 'Aug 2022 – Aug 2023',
-    location: 'Den Haag, Netherlands',
+    location: 'Voorburg, Netherlands',
     type: 'Freelance',
     description: [
       'Built end-to-end application stack on AWS for investment data platform',
@@ -78,7 +78,7 @@ export const experiences: ExperienceItem[] = [
     company: 'Aegon Nederland',
     role: 'Senior Data Engineer',
     period: 'Feb 2019 – Jul 2019',
-    location: 'Den Haag, Netherlands',
+    location: 'Voorburg, Netherlands',
     description: [
       'Built AWS Glue data pipelines for financial data layer processing',
       'Set up enterprise data lake architecture on AWS S3',
