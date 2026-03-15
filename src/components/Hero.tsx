@@ -102,7 +102,10 @@ export default function Hero() {
             Contact
           </a>
         </div>
-        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">-- Tech Stack</p>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="h-px w-8 bg-[#d97757]" />
+          <span className="text-[#d97757] font-semibold text-sm uppercase tracking-wider">Tech Stack</span>
+        </div>
         <div className="flex flex-wrap gap-3">
         {TECH_PILLS.map((tech) => (
           <span
