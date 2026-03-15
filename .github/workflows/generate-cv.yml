@@ -25,11 +25,17 @@ jobs:
 
       - name: Install resume-cli and theme
         run: |
-          npm install -g resume-cli
-          npm install jsonresume-theme-even
+          mkdir -p /tmp/resume-builder
+          cd /tmp/resume-builder
+          npm init -y
+          npm install resume-cli jsonresume-theme-even
 
       - name: Export PDF
-        run: resume export public/RamuKamath-CV.pdf --theme jsonresume-theme-even --format pdf
+        run: |
+          cp resume.json /tmp/resume-builder/resume.json
+          cd /tmp/resume-builder
+          ./node_modules/.bin/resume export resume.pdf --theme jsonresume-theme-even --format pdf
+          cp resume.pdf $GITHUB_WORKSPACE/public/RamuKamath-CV.pdf
 
       - name: Commit updated PDF
         run: |
