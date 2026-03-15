@@ -21,40 +21,51 @@ export default function Hero() {
           backgroundSize: '72px 72px',
         }} />
 
-      {/* ── Left: content ── */}
-      <div className="relative z-10 flex w-full flex-1">
-      <div className="flex flex-col justify-center w-full lg:w-1/2 px-8 sm:px-12 lg:px-16 py-32">
+      {/* ── Main content row ── */}
+      <div className="relative z-10 flex flex-col lg:flex-row w-full flex-1">
 
-        {/* Subtitle */}
-        <div className="animate-fade-in-up-delay-1 mb-2">
-          <span className="text-gray-400 text-sm font-medium tracking-widest uppercase">
-            Senior Data Platform Engineer · Data Architect
-          </span>
+        {/* Photo: top on mobile, hidden on desktop (shown on right) */}
+        <div className="flex lg:hidden justify-center pt-28 pb-6 px-8">
+          <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
+            <img
+              src="/photo.jpg"
+              alt="Ramu Kamath"
+              className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-110"
+              style={{ objectPosition: 'center top' }}
+            />
+          </div>
         </div>
 
-        {/* Big headline */}
-        <h1 className="word-animate text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.05]"
-          style={{ animationDelay: '0.2s' }}>
-          Ramu<br />
-          <span style={{ color: '#d97757' }}>Kamath</span>
-        </h1>
+        {/* Left: text content */}
+        <div className="flex flex-col justify-center w-full lg:w-1/2 px-8 sm:px-12 lg:px-16 pb-16 lg:py-32">
 
-        {/* Bio */}
-        <div className="animate-fade-in-up-delay-2 text-gray-500 text-base leading-relaxed max-w-lg mb-8">
-          <p>
-            <span className="text-gray-800 font-semibold">Data enthusiast and Data &amp; AI Platform Leader</span> specializing in Databricks Lakehouse architecture
-            and cloud-native engineering. With extensive experience building scalable data platforms across
-            finance, retail, and logistics, I combine the best of <span className="text-gray-800 font-semibold">software, data, and DevOps engineering</span>.
-            I have a proven track record of delivering impact across Azure, AWS, and GCP.
-            When I'm not building data platforms, you'll find me on the tennis court, out on a run, or pushing weights at the gym.
-          </p>
+          {/* Subtitle */}
+          <div className="animate-fade-in-up-delay-1 mb-2">
+            <span className="text-gray-400 text-sm font-medium tracking-widest uppercase">
+              Senior Data Platform Engineer · Data Architect
+            </span>
+          </div>
+
+          {/* Big headline */}
+          <h1 className="word-animate text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.05]"
+            style={{ animationDelay: '0.2s' }}>
+            Ramu<br />
+            <span style={{ color: '#d97757' }}>Kamath</span>
+          </h1>
+
+          {/* Bio */}
+          <div className="animate-fade-in-up-delay-2 text-gray-500 text-base leading-relaxed max-w-lg mb-8">
+            <p>
+              <span className="text-gray-800 font-semibold">Data enthusiast and Data &amp; AI Platform Leader</span> specializing in Databricks Lakehouse architecture
+              and cloud-native engineering. With extensive experience building scalable data platforms across
+              finance, retail, and logistics, I combine the best of <span className="text-gray-800 font-semibold">software, data, and DevOps engineering</span>.
+              I have a proven track record of delivering impact across Azure, AWS, and GCP.
+              When I'm not building data platforms, you'll find me on the tennis court, out on a run, or pushing weights at the gym.
+            </p>
+          </div>
         </div>
 
-
-
-      </div>
-
-        {/* ── Right: photo ── */}
+        {/* Right: photo on desktop */}
         <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
           <div className="w-[28rem] h-[28rem] xl:w-[34rem] xl:h-[34rem] rounded-3xl overflow-hidden shadow-xl flex-shrink-0">
             <img
