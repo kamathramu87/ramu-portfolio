@@ -6,10 +6,17 @@ const resume = JSON.parse(readFileSync('/tmp/resume-builder/resume.json', 'utf-8
 
 // Embed photo as base64
 let photoBase64 = '';
-try {
-  const photoData = readFileSync('/tmp/resume-builder/mypicture.jpg');
-  photoBase64 = `data:image/jpeg;base64,${photoData.toString('base64')}`;
-} catch(e) {}
+const photoPaths = [
+  '/tmp/resume-builder/mypicture.jpg',
+  resolve(process.env.GITHUB_WORKSPACE || '.', 'public/cv-photo.png'),
+];
+for (const p of photoPaths) {
+  try {
+    const ext = p.endsWith('.png') ? 'png' : 'jpeg';
+    photoBase64 = `data:image/${ext};base64,${readFileSync(p).toString('base64')}`;
+    break;
+  } catch(e) {}
+}
 
 const formatDate = (d) => {
   if (!d) return 'Present';
