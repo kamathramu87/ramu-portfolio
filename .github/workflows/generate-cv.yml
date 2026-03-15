@@ -23,11 +23,13 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install resume-cli
-        run: npm install -g resume-cli jsonresume-theme-even
+      - name: Install resume-cli and theme
+        run: |
+          npm install -g resume-cli
+          npm install jsonresume-theme-even
 
       - name: Export PDF
-        run: resume export public/RamuKamath-CV.pdf --theme even --format pdf
+        run: resume export public/RamuKamath-CV.pdf --theme jsonresume-theme-even --format pdf
 
       - name: Commit updated PDF
         run: |
