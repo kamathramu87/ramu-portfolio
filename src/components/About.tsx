@@ -66,7 +66,7 @@ export default function About() {
           {/* Photo */}
           <div className="relative min-h-[400px] lg:min-h-0">
             <img
-              src="/ramu-portfolio/photo.jpg"
+              src="/photo.jpg"
               alt="Ramu Kamath"
               className="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-lg"
             />

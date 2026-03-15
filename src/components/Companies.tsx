@@ -1,7 +1,7 @@
 const companies = [
-  { name: 'ABN AMRO', logo: '/ramu-portfolio/abnamro.png' },
-  { name: 'FedEx', logo: '/ramu-portfolio/fedex.png' },
-  { name: 'NN Investment Partners', logo: '/ramu-portfolio/nnip.png' },
+  { name: 'ABN AMRO', logo: '/abnamro.png' },
+  { name: 'FedEx', logo: '/fedex.png' },
+  { name: 'NN Investment Partners', logo: '/nnip.png' },
 ];
 
 // Duplicate for seamless loop
