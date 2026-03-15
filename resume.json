@@ -45,21 +45,6 @@
       ]
     },
     {
-      "name": "ABN AMRO Bank",
-      "location": "Amsterdam, Netherlands",
-      "position": "Senior Data Engineer",
-      "startDate": "2020-01",
-      "endDate": "2022-07",
-      "highlights": [
-        "Designed and implemented data pipeline architecture for Domain Data Store",
-        "Designed and implemented Data Quality Framework for proactive monitoring and reporting of DQ issues",
-        "Built command line utility to automate generation of ETL configuration, reducing development time and manual errors",
-        "Guided the data engineering community on best practices and solution design",
-        "Reduced processing of historical data through parallel data processing architecture",
-        "Worked with Databricks to optimize product usage and reduce cost"
-      ]
-    },
-    {
       "name": "NN Investment Partners",
       "location": "Den Haag, Netherlands",
       "position": "Freelance Senior Data Platform Engineer",
@@ -72,6 +57,21 @@
         "Built reference database using graph database (Neptune)",
         "Automated infrastructure using CDK (TypeScript) and CloudFormation",
         "Set up and authored/orchestrated data pipelines using Airflow"
+      ]
+    },
+    {
+      "name": "ABN AMRO Bank",
+      "location": "Amsterdam, Netherlands",
+      "position": "Senior Data Engineer",
+      "startDate": "2020-01",
+      "endDate": "2022-07",
+      "highlights": [
+        "Designed and implemented data pipeline architecture for Domain Data Store",
+        "Designed and implemented Data Quality Framework for proactive monitoring and reporting of DQ issues",
+        "Built command line utility to automate generation of ETL configuration, reducing development time and manual errors",
+        "Guided the data engineering community on best practices and solution design",
+        "Reduced processing of historical data through parallel data processing architecture",
+        "Worked with Databricks to optimize product usage and reduce cost"
       ]
     },
     {
