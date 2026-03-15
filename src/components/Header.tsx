@@ -77,7 +77,7 @@ export default function Header() {
                 </svg>
               </a>
               <a
-                href="mailto:ramukamath@outlook.com"
+                href="mailto:contact@ramukamath.com"
                 className="p-2 transition-colors duration-200 rounded-md text-gray-500 hover:text-[#d97757] hover:bg-orange-50"
                 aria-label="Email"
               >

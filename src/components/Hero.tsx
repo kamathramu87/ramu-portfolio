@@ -92,7 +92,7 @@ export default function Hero() {
             Download CV
           </a>
           <a
-            href="mailto:ramukamath@outlook.com"
+            href="mailto:contact@ramukamath.com"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm text-white transition-all duration-200 hover:-translate-y-0.5"
             style={{ background: 'linear-gradient(135deg, #d97757 0%, #c2622a 100%)', boxShadow: '0 4px 20px rgba(217,119,87,0.25)' }}
           >

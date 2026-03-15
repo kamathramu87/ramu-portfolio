@@ -41,7 +41,7 @@ export default function About() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="mailto:ramukamath@outlook.com"
+                href="mailto:contact@ramukamath.com"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#d97757] text-white rounded-lg text-sm font-semibold hover:bg-[#c2622a] transition-colors duration-200"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

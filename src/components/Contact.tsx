@@ -25,8 +25,8 @@ export default function Contact() {
                   </svg>
                 ),
                 label: 'Email',
-                value: 'ramukamath@outlook.com',
-                href: 'mailto:ramukamath@outlook.com',
+                value: 'contact@ramukamath.com',
+                href: 'mailto:contact@ramukamath.com',
               },
               {
                 icon: (
