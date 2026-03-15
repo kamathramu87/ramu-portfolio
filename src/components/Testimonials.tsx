@@ -9,18 +9,18 @@ const testimonials = [
     photo: '/maarten.png',
   },
   {
-    name: 'Shanker Somanchi',
-    title: 'Business Intelligence Consultant',
-    relationship: 'Worked with Ramu on different teams · November 2018',
-    quote: 'I know Ramu when working together in KPN. Ramu is very efficient and intellectual thus always has very good thoughts to a problem or to build a solution. Besides my experience is his general nature of not giving up is quiet often seen in professional work. He is fun to talk to and it makes connecting to him and working with him lot easier. I really recommend Ramu to be a colleague.',
-    photo: '/shanker.png',
-  },
-  {
     name: 'Diena Mahran',
     title: 'Freelance Data Architect | Solution Architect | Data Governance | Certified Data Trainer',
     relationship: 'Worked with Ramu in the same group · July 2022',
     quote: 'Ramu is an eager and highly skilled data engineer who goes out of his way to deliver above expectations. He always updates his experience with the newest technologies. He keeps an eye on solutions and developments in the market to implement at his clients. This is also the reason why he rapidly developed to the lead engineer in his team and is known by the business, PO\'s and data modellers as the go to person when it comes to developing data platforms.\n\nRamu is not only a highly skilled engineer, but also a friendly and genuine colleague who is concerned about the development of his team members and a healthy atmosphere within his team. His energy and participation always leaves an unforgettable impression.',
     photo: '/diena.png',
+  },
+  {
+    name: 'Shanker Somanchi',
+    title: 'Business Intelligence Consultant',
+    relationship: 'Worked with Ramu on different teams · November 2018',
+    quote: 'I know Ramu when working together in KPN. Ramu is very efficient and intellectual thus always has very good thoughts to a problem or to build a solution. Besides my experience is his general nature of not giving up is quiet often seen in professional work. He is fun to talk to and it makes connecting to him and working with him lot easier. I really recommend Ramu to be a colleague.',
+    photo: '/shanker.png',
   },
 ];
 
