@@ -1,0 +1,35 @@
+name: Generate CV PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'resume.json'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+
+      - name: Install resume-cli
+        run: npm install -g resume-cli jsonresume-theme-even
+
+      - name: Export PDF
+        run: resume export public/RamuKamath-CV.pdf --theme even --format pdf
+
+      - name: Commit updated PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/RamuKamath-CV.pdf
+          git diff --staged --quiet || git commit -m "Auto-generate CV PDF from resume.json"
+          git push

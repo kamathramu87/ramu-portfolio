@@ -1,0 +1,155 @@
+{
+  "basics": {
+    "name": "Ramu Kamath",
+    "label": "Senior Data Platform Engineer | Data Architect",
+    "image": "",
+    "email": "contact@ramukamath.com",
+    "phone": "+31 630212429",
+    "url": "https://ramukamath.com",
+    "summary": "Results-driven Data Platform Engineer with a strong background in designing, automating, and optimizing modern data infrastructure for large-scale analytics and processing. Passionate about building resilient platforms that balance innovation with environmental and cost-conscious responsibility.",
+    "location": {
+      "city": "Den Haag",
+      "countryCode": "NL"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "ramu-k-b5b40499",
+        "url": "https://www.linkedin.com/in/ramu-k-b5b40499"
+      },
+      {
+        "network": "GitHub",
+        "username": "kamathramu87",
+        "url": "https://github.com/kamathramu87"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "ABN AMRO Bank N.V.",
+      "location": "Amsterdam, Netherlands",
+      "position": "Senior Data Platform Engineer",
+      "startDate": "2023-08",
+      "endDate": "",
+      "summary": "",
+      "highlights": [
+        "Designed and deployed scalable Databricks lakehouse architecture on Azure for the bank's next-gen Data & AI platform",
+        "Automated infrastructure provisioning on Azure using Terraform and Helm-based deployment on AKS",
+        "Implemented Unity Catalog setup and feature development for bank-wide data governance",
+        "Implemented CI/CD best practices for data engineering using Databricks Asset Bundles (DAB)",
+        "Set up modern ingestion and ETL way of working for domain data teams",
+        "Templating using Cookiecutter for automating the creation of repositories",
+        "Working with sustainability team on FinOps to optimize cloud resource usage and reduce cost",
+        "Contributor in the data engineering community, sharing best practices and mentoring peers",
+        "Responsible for building and maintaining a reliable and scalable orchestration framework using Airflow (AKS)"
+      ]
+    },
+    {
+      "name": "ABN AMRO Bank",
+      "location": "Amsterdam, Netherlands",
+      "position": "Senior Data Engineer",
+      "startDate": "2020-01",
+      "endDate": "2022-07",
+      "highlights": [
+        "Designed and implemented data pipeline architecture for Domain Data Store",
+        "Designed and implemented Data Quality Framework for proactive monitoring and reporting of DQ issues",
+        "Built command line utility to automate generation of ETL configuration, reducing development time and manual errors",
+        "Guided the data engineering community on best practices and solution design",
+        "Reduced processing of historical data through parallel data processing architecture",
+        "Worked with Databricks to optimize product usage and reduce cost"
+      ]
+    },
+    {
+      "name": "NN Investment Partners",
+      "location": "Den Haag, Netherlands",
+      "position": "Freelance Senior Data Platform Engineer",
+      "startDate": "2022-08",
+      "endDate": "2023-08",
+      "highlights": [
+        "Designed and built end-to-end application stack on AWS",
+        "Created ETL historical load engine to process data into application",
+        "Guided the team on data engineering best practices",
+        "Built reference database using graph database (Neptune)",
+        "Automated infrastructure using CDK (TypeScript) and CloudFormation",
+        "Set up and authored/orchestrated data pipelines using Airflow"
+      ]
+    },
+    {
+      "name": "Datlinq - a Roamler Company",
+      "location": "Rotterdam, NL",
+      "position": "Senior Data Engineer",
+      "startDate": "2019-08",
+      "endDate": "2020-06",
+      "highlights": [
+        "Designed and delivered scalable, cost-efficient data pipelines for real-time and batch workloads",
+        "Set up a containerized orchestration environment with automated DAGs for data workflows",
+        "Architected and implemented a unified, centralized data store to improve data accessibility",
+        "Led migration of data infrastructure from GCP to AWS, achieving a 30% cost reduction",
+        "Enabled automated recommendation services through efficient pipeline design",
+        "Built and optimized real-time data streaming solutions for business-critical applications"
+      ]
+    },
+    {
+      "name": "Aegon Nederland",
+      "location": "Den Haag, NL",
+      "position": "Senior Data Engineer",
+      "startDate": "2019-02",
+      "endDate": "2019-07",
+      "highlights": [
+        "Designed and built data pipelines using AWS Glue to ingest data into the finance publication layer",
+        "Set up a data lake for financial data sources",
+        "Created metadata-driven data ingestion and processing",
+        "Set up CI/CD pipeline and infrastructure services using CloudFormation and Ansible"
+      ]
+    },
+    {
+      "name": "Accenture",
+      "location": "Bangalore / Amsterdam, NL",
+      "position": "Digital Data Engineer",
+      "startDate": "2009-01",
+      "endDate": "2018-12",
+      "highlights": [
+        "Worked with a data lake environment and ingested numerous data sources (modem logs, CDRs, commercial data, weblogs) into HDFS",
+        "Planned and executed a semantic layer to expose data to downstream applications",
+        "Created reusable and portable ETL solutions for data pipelines",
+        "Documented projects with version control and automated integration with CI/CD pipeline",
+        "Rationalised manual reporting services and built integrated data warehouse solutions"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Cloud & Platforms",
+      "keywords": ["Azure", "AWS", "GCP", "Databricks"]
+    },
+    {
+      "name": "Programming",
+      "keywords": ["Python", "SQL", "Bash", "TypeScript"]
+    },
+    {
+      "name": "Data Engineering",
+      "keywords": ["ETL", "Airflow", "Data Modeling", "Data Lake", "Metadata Management", "Unity Catalog"]
+    },
+    {
+      "name": "DevOps Engineering",
+      "keywords": ["Terraform", "Docker", "Kubernetes", "Ansible", "Azure DevOps", "GitHub Actions"]
+    },
+    {
+      "name": "Methodologies",
+      "keywords": ["Agile", "Scrum", "FinOps"]
+    }
+  ],
+  "certificates": [
+    { "name": "Microsoft Certified: Azure Administrator Associate" },
+    { "name": "Microsoft Certified: Azure Data Engineer Associate" },
+    { "name": "Microsoft Certified: DevOps Engineer Expert" },
+    { "name": "Google Professional Data Engineer" },
+    { "name": "Databricks Certified Associate Developer for Apache Spark 3.0" },
+    { "name": "AWS Certified Big Data – Specialty" },
+    { "name": "AWS Certified Solutions Architect Associate" },
+    { "name": "AWS Certified Cloud Practitioner" },
+    { "name": "Oracle 11G Implementation Specialist" },
+    { "name": "TD14 Certified Professional" },
+    { "name": "Professional Scrum Master" }
+  ]
+}
