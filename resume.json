@@ -128,7 +128,7 @@
     },
     {
       "name": "Data Engineering",
-      "keywords": ["ETL", "Airflow", "Data Modeling", "Data Lake", "Metadata Management", "Unity Catalog"]
+      "keywords": ["ETL", "Airflow", "Dagster", "dbt", "Data Modeling", "Data Lake", "Metadata Management", "Unity Catalog"]
     },
     {
       "name": "DevOps Engineering",
