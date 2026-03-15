@@ -5,6 +5,12 @@ on:
     branches:
       - main
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Generate CV PDF"]
+    types:
+      - completed
+    branches:
+      - main
 
 permissions:
   contents: read
