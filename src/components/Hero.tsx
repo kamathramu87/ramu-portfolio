@@ -1,6 +1,46 @@
+import { useEffect, useState } from 'react';
 import TechIcon from './TechIcon';
 
 const TECH_PILLS = ['Databricks', 'Azure', 'AWS', 'Terraform', 'Kubernetes', 'Airflow', 'Unity Catalog', 'Python'];
+
+// Segments: { text, bold }
+const SEGMENTS = [
+  { text: 'Data enthusiast and Data & AI Platform Leader specializing', bold: true },
+  { text: ' in Databricks Lakehouse architecture and cloud-native engineering. With extensive experience building scalable data platforms across finance, retail, and logistics, I combine the best of ', bold: false },
+  { text: 'software, data, and DevOps engineering', bold: true },
+  { text: ". I have a proven track record of delivering impact across Azure, AWS, and GCP. When I'm not building data platforms, you'll find me on the tennis court, out on a run, or pushing weights at the gym.", bold: false },
+];
+
+const FULL_TEXT = SEGMENTS.map(s => s.text).join('');
+
+function TypewriterText() {
+  const [charCount, setCharCount] = useState(0);
+
+  useEffect(() => {
+    if (charCount >= FULL_TEXT.length) return;
+    const timeout = setTimeout(() => setCharCount(c => c + 1), 30);
+    return () => clearTimeout(timeout);
+  }, [charCount]);
+
+  let globalIndex = 0;
+  const rendered = SEGMENTS.map((seg, si) => {
+    const visible = seg.text.slice(0, Math.max(0, charCount - globalIndex));
+    globalIndex += seg.text.length;
+    if (!visible) return null;
+    return seg.bold
+      ? <span key={si} className="text-gray-800 font-semibold">{visible}</span>
+      : <span key={si}>{visible}</span>;
+  });
+
+  return (
+    <span>
+      {rendered}
+      {charCount < FULL_TEXT.length && (
+        <span className="inline-block w-2.5 h-4 bg-black ml-0.5 animate-pulse align-middle" />
+      )}
+    </span>
+  );
+}
 
 export default function Hero() {
 
@@ -55,13 +95,7 @@ export default function Hero() {
 
           {/* Bio */}
           <div className="animate-fade-in-up-delay-2 text-gray-500 text-base leading-relaxed max-w-lg mb-8">
-            <p>
-              <span className="text-gray-800 font-semibold">Data enthusiast and Data &amp; AI Platform Leader</span> specializing in Databricks Lakehouse architecture
-              and cloud-native engineering. With extensive experience building scalable data platforms across
-              finance, retail, and logistics, I combine the best of <span className="text-gray-800 font-semibold">software, data, and DevOps engineering</span>.
-              I have a proven track record of delivering impact across Azure, AWS, and GCP.
-              When I'm not building data platforms, you'll find me on the tennis court, out on a run, or pushing weights at the gym.
-            </p>
+            <p><TypewriterText /></p>
           </div>
         </div>
 
