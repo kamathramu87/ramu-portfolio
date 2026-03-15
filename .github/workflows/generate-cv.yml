@@ -23,19 +23,21 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install resume-cli and theme
+      - name: Install dependencies
         run: |
           mkdir -p /tmp/resume-builder
           cd /tmp/resume-builder
           npm init -y
-          npm install resume-cli jsonresume-theme-even
+          npm install jsonresume-theme-even puppeteer
 
-      - name: Export PDF
+      - name: Copy files
         run: |
           cp resume.json /tmp/resume-builder/resume.json
-          cd /tmp/resume-builder
-          ./node_modules/.bin/resume export resume.pdf --theme jsonresume-theme-even --format pdf
-          cp resume.pdf $GITHUB_WORKSPACE/public/RamuKamath-CV.pdf
+          cp scripts/generate-pdf.mjs /tmp/resume-builder/generate-pdf.mjs
+
+      - name: Generate PDF
+        run: node generate-pdf.mjs
+        working-directory: /tmp/resume-builder
 
       - name: Commit updated PDF
         run: |
