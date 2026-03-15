@@ -82,7 +82,7 @@ export default function Hero() {
           {/* Subtitle */}
           <div className="animate-fade-in-up-delay-1 mb-2">
             <span className="text-gray-400 text-sm font-medium tracking-widest uppercase">
-              Senior Data Platform Engineer · Data Architect
+              Senior Data Platform Engineer · Data Architect · Vibe Coder 🤖
             </span>
           </div>
 
