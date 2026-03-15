@@ -82,7 +82,7 @@ export default function Hero() {
       <div className="relative z-10 w-full px-8 sm:px-12 lg:px-16 py-8 border-t border-gray-100">
         <div className="flex flex-wrap gap-3 mb-10">
           <a
-            href="/RamuKamath-CV.pdf"
+            href={`/RamuKamath-CV.pdf?v=${Date.now()}`}
             download="RamuKamath-CV.pdf"
             className="inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-sm text-gray-700 border border-gray-200 hover:border-[#d97757] hover:text-[#d97757] transition-all duration-200 hover:-translate-y-0.5"
           >
