@@ -28,7 +28,7 @@ jobs:
           mkdir -p /tmp/resume-builder
           cd /tmp/resume-builder
           npm init -y
-          npm install jsonresume-theme-even puppeteer
+          npm install puppeteer
 
       - name: Copy files
         run: |
