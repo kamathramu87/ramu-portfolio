@@ -26,7 +26,7 @@ The `public/CNAME` file must contain `ramukamath.com` for the custom domain to w
 
 **Routing:** `HashRouter` is used (not `BrowserRouter`) so client-side routes work on GitHub Pages without server config. Routes: `/` (Home), `/blog` (BlogList), `/blog/:slug` (BlogPost).
 
-**Base path:** `vite.config.ts` sets `base: '/ramu-portfolio/'`. All static assets in `public/` must be referenced as `/ramu-portfolio/filename` (e.g. `/ramu-portfolio/photo.jpg`).
+**Base path:** `vite.config.ts` sets `base: '/'`. Static assets in `public/` are referenced as `/filename` (e.g. `/photo.jpg`, `/mcp-architecture.svg`).
 
 **Styling:** Tailwind v4 imported via `@import "tailwindcss"` in `src/index.css`. Custom animations (`fadeInUp`, `wordIn`, `orbFloat1/2/3`, `marquee`) and utility classes (`.noise`, `.glass`, `.btn-glow`, `.gradient-text`, `.animate-marquee`, `.word-animate`) are defined in `src/index.css`.
 

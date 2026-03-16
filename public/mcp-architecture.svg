@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 420" width="340" height="420" font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+  <!-- Background -->
+  <rect width="340" height="420" fill="#1e1e2e" rx="16"/>
+
+  <!-- VS Code Copilot Agent box -->
+  <rect x="60" y="30" width="220" height="60" rx="10" fill="#2d2d44" stroke="#d97757" stroke-width="1.5"/>
+  <text x="170" y="56" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">VS CODE COPILOT</text>
+  <text x="170" y="75" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">AGENT</text>
+
+  <!-- Arrow 1 -->
+  <line x1="170" y1="90" x2="170" y2="148" stroke="#6c6c8a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="170,155 164,143 176,143" fill="#6c6c8a"/>
+
+  <!-- Local MCP Server box -->
+  <rect x="60" y="155" width="220" height="60" rx="10" fill="#2d2d44" stroke="#d97757" stroke-width="1.5"/>
+  <text x="170" y="181" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">LOCAL MCP</text>
+  <text x="170" y="200" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">SERVER</text>
+
+  <!-- Arrow 2 -->
+  <line x1="170" y1="215" x2="170" y2="273" stroke="#6c6c8a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="170,280 164,268 176,268" fill="#6c6c8a"/>
+
+  <!-- Databricks CLI / APIs box -->
+  <rect x="60" y="280" width="220" height="60" rx="10" fill="#2d2d44" stroke="#d97757" stroke-width="1.5"/>
+  <text x="170" y="306" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">DATABRICKS CLI</text>
+  <text x="170" y="325" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">/ APIS</text>
+
+  <!-- Arrow 3 -->
+  <line x1="170" y1="340" x2="170" y2="373" stroke="#6c6c8a" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="170,380 164,368 176,368" fill="#6c6c8a"/>
+
+  <!-- Databricks Workspace box -->
+  <rect x="60" y="380" width="220" height="25" rx="8" fill="#2d2d44" stroke="#d97757" stroke-width="1.5"/>
+  <text x="170" y="397" text-anchor="middle" fill="#d97757" font-size="11" font-weight="600" letter-spacing="0.5">DATABRICKS WORKSPACE</text>
+</svg>
