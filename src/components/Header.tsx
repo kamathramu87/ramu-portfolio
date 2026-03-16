@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === '/';
 
   const navLinks = [
@@ -12,13 +13,17 @@ export default function Header() {
   ];
 
   const scrollTo = (id: string) => {
+    setMenuOpen(false);
     if (!isHome) {
-      window.location.href = '/' + id;
+      navigate('/');
+      setTimeout(() => {
+        const el = document.querySelector(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
       return;
     }
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false);
   };
 
   return (

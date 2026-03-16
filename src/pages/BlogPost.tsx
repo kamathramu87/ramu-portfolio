@@ -1,6 +1,33 @@
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { getBlogPost, getLatestPosts } from '../data/blog';
+
+function CopyButton({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <button
+      onClick={handleCopy}
+      title="Copy code"
+      className="absolute bottom-2 right-2 w-8 h-8 flex items-center justify-center rounded border border-gray-600 bg-gray-800 hover:bg-gray-700 transition-colors duration-150"
+    >
+      {copied ? (
+        <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      ) : (
+        <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+      )}
+    </button>
+  );
+}
 
 function formatDate(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString('en-US', {
@@ -104,7 +131,22 @@ export default function BlogPost() {
           {/* Main content */}
           <div className="lg:col-span-8">
             <article className="prose prose-lg max-w-none">
-              <ReactMarkdown>{post.content}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  pre({ children, ...props }) {
+                    const codeEl = React.Children.toArray(children)[0] as React.ReactElement<{ children?: React.ReactNode }>;
+                    const code = String(codeEl?.props?.children ?? '').replace(/\n$/, '');
+                    return (
+                      <pre {...props} className="relative">
+                        {children}
+                        <CopyButton code={code} />
+                      </pre>
+                    );
+                  },
+                }}
+              >
+                {post.content}
+              </ReactMarkdown>
             </article>
 
             {/* Article footer */}
