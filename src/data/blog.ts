@@ -33,6 +33,21 @@ Model Context Protocol (MCP) is an open standard from Anthropic. You write a sma
 
 You don't build an agent. You just build the tools. Copilot is already the agent.
 
+\`\`\`
+VS Code Copilot Agent
+        │
+        │
+        ▼
+ Local MCP Server
+        │
+        │
+        ▼
+Databricks CLI / APIs
+        │
+        ▼
+Databricks Workspace
+\`\`\`
+
 ---
 
 ## Prerequisites
