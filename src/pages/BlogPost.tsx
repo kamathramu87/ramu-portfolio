@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import remarkGfm from 'remark-gfm';
 import { getBlogPost, getLatestPosts } from '../data/blog';
 
 function CopyButton({ code }: { code: string }) {
@@ -68,7 +71,7 @@ export default function BlogPost() {
 
       {/* Article header */}
       <div className="bg-gray-50 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
             <Link to="/" className="hover:text-[#d97757] transition-colors duration-200">Home</Link>
@@ -126,22 +129,37 @@ export default function BlogPost() {
       </div>
 
       {/* Article content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Main content */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-9">
             <article className="prose prose-lg max-w-none">
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
-                  pre({ children, ...props }) {
-                    const codeEl = React.Children.toArray(children)[0] as React.ReactElement<{ children?: React.ReactNode }>;
-                    const code = String(codeEl?.props?.children ?? '').replace(/\n$/, '');
-                    return (
-                      <pre {...props} className="relative">
-                        {children}
-                        <CopyButton code={code} />
-                      </pre>
-                    );
+                  pre({ children }) {
+                    return <>{children}</>;
+                  },
+                  code({ className, children, ...props }) {
+                    const match = /language-(\w+)/.exec(className || '');
+                    const code = String(children).replace(/\n$/, '');
+                    const isBlock = code.includes('\n') || match;
+                    if (isBlock) {
+                      return (
+                        <div className="code-block relative my-6">
+                          <SyntaxHighlighter
+                            style={oneLight}
+                            language={match ? match[1] : 'text'}
+                            PreTag="div"
+                            customStyle={{ fontSize: '0.875em', margin: 0, padding: '1.25em 1.5em' }}
+                          >
+                            {code}
+                          </SyntaxHighlighter>
+                          <CopyButton code={code} />
+                        </div>
+                      );
+                    }
+                    return <code className={className} {...props}>{children}</code>;
                   },
                 }}
               >
@@ -178,7 +196,7 @@ export default function BlogPost() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-4 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             {/* Tags */}
             <div className="bg-gray-50 rounded-xl p-5 border border-gray-100">
               <h3 className="font-semibold text-gray-900 text-sm uppercase tracking-wider mb-3">Topics</h3>

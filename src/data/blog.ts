@@ -9,9 +9,10 @@ export interface BlogPost {
 }
 
 import deltaTimeTravel from './posts/delta-time-travel';
+import deltaRetention from './posts/delta-retention';
 import mcpDatabricksOps from './posts/mcp-databricks-ops';
 
-export const blogPosts: BlogPost[] = [deltaTimeTravel, mcpDatabricksOps];
+export const blogPosts: BlogPost[] = [deltaTimeTravel, deltaRetention, mcpDatabricksOps];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);

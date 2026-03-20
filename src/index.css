@@ -178,12 +178,27 @@ h1, h2, h3, h4, h5 {
   font-size: 0.875em; font-family: ui-monospace, Consolas, monospace;
 }
 .prose pre {
-  background-color: #0d1117; color: #e2e8f0;
+  background-color: #f8f9fa; color: #1a1a1a;
   border-radius: 10px; overflow-x: auto;
   padding: 1.5em; margin: 1.5em 0;
-  border: 1px solid rgba(255,255,255,0.06);
+}
+.code-block {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.code-block * {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 .prose pre code { background: none; color: inherit; padding: 0; font-size: 0.9em; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.9em; }
+.prose th { background: #f3f4f6; text-align: left; padding: 0.6em 1em; font-weight: 600; border: 1px solid #e5e7eb; }
+.prose td { padding: 0.6em 1em; border: 1px solid #e5e7eb; color: #374151; }
+.prose tr:nth-child(even) td { background: #f9fafb; }
+
 .prose blockquote {
   border-left: 4px solid #d97757; color: #4b5563;
   padding-left: 1.5em; margin: 1.5em 0; font-style: italic;

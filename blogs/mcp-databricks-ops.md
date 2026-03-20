@@ -1,14 +1,4 @@
-import type { BlogPost } from '../blog';
-
-const post: BlogPost = {
-  slug: 'getting-lazy-with-mcp-for-databricks-ops',
-  title: 'How to Set Up a Local MCP Agent for Databricks Ops in VS Code',
-  date: '2026-03-16',
-  description:
-    'A practical guide to building a local MCP server that gives VS Code Copilot live access to your Databricks jobs — so you can ask operational questions in plain English and get answers instantly.',
-  tags: ['Databricks', 'MCP', 'AI', 'Python', 'VS Code'],
-  readTime: '5 min read',
-  content: `# How to Set Up a Local MCP Agent for Databricks Ops in VS Code
+# How to Set Up a Local MCP Agent for Databricks Ops in VS Code
 
 As a data engineer, a big chunk of your day isn't writing pipelines. It's the small stuff.
 
@@ -24,112 +14,110 @@ Model Context Protocol (MCP) is an open standard from Anthropic. You write a sma
 
 You don't build an agent. You just build the tools. Copilot is already the agent.
 
-\`\`\`
+```
 VS Code Copilot Agent
-        │
         │
         ▼
  Local MCP Server
-        │
         │
         ▼
 Databricks CLI / APIs
         │
         ▼
 Databricks Workspace
-\`\`\`
+```
 
 ---
 
 ## Prerequisites
 
 - Python 3.11+
-- uv — \`brew install uv\`
-- Databricks CLI — \`brew install databricks\`
+- uv — `brew install uv`
+- Databricks CLI — `brew install databricks`
 - VS Code 1.99+ with GitHub Copilot extension
 
 ---
 
 ## Step 1 — Clone and Install
 
-\`\`\`bash
+```bash
 git clone https://github.com/kamathramu87/databricks-mcp-server
 cd databricks-mcp-server
 uv sync
-\`\`\`
+```
 
 ## Step 2 — Authenticate with Databricks
 
 Skip the Personal Access Token. Use OAuth — one login, no secrets in files:
 
-\`\`\`bash
+```bash
 databricks auth login --host https://adb-xxx.azuredatabricks.net
-\`\`\`
+```
 
-This opens a browser, authenticates you, and stores the token in \`~/.databrickscfg\`. The SDK picks it up automatically on every call.
+This opens a browser, authenticates you, and stores the token in `~/.databrickscfg`. The SDK picks it up automatically on every call.
 
 ## Step 3 — Set Your Workspace URL
 
-\`\`\`bash
+```bash
 cp .env.example .env
-\`\`\`
+```
 
-Edit \`.env\`:
+Edit `.env`:
 
-\`\`\`bash
+```
 DATABRICKS_HOST=https://adb-xxx.azuredatabricks.net
-\`\`\`
+```
 
 That's the only thing you need in there.
 
 ## Step 4 — Open the Folder in VS Code
 
-\`\`\`bash
+```bash
 code .
-\`\`\`
+```
 
-The project includes \`.vscode/mcp.json\` which VS Code auto-discovers:
+The project includes `.vscode/mcp.json` which VS Code auto-discovers:
 
-\`\`\`json
+```json
 {
   "servers": {
     "databricks": {
       "type": "stdio",
       "command": "uv",
-      "args": ["--directory", "\${workspaceFolder}", "run", "databricks-mcp"],
-      "envFile": "\${workspaceFolder}/.env"
+      "args": ["--directory", "${workspaceFolder}", "run", "databricks-mcp"],
+      "envFile": "${workspaceFolder}/.env"
     }
   }
 }
-\`\`\`
+```
 
-And \`.vscode/settings.json\` which enables MCP in Copilot:
+And `.vscode/settings.json` which enables MCP in Copilot:
 
-\`\`\`json
+```json
 {
   "chat.mcp.access": "all"
 }
-\`\`\`
+```
 
 ## Step 5 — Start the MCP Server
 
-\`Cmd+Shift+P\` → **MCP: List Servers** → click **Start** next to \`databricks\`.
+`Cmd+Shift+P` → **MCP: List Servers** → click **Start** next to `databricks`.
 
-You should see it go green. If it errors, check the Output panel — most common issue is \`uv\` not being on PATH, which you can fix by replacing \`"command": "uv"\` in \`mcp.json\` with the full path from \`which uv\`.
+You should see it go green. If it errors, check the Output panel — most common issue is `uv` not being on PATH, which you can fix by replacing `"command": "uv"` in `mcp.json` with the full path from `which uv`.
 
 ## Step 6 — Use It in Copilot Chat
 
 Open Copilot Chat, switch to **Agent** mode, and start asking:
 
-\`\`\`text
+```
 Which jobs have a failed latest run?
-\`\`\`
-\`\`\`text
+```
+```
 What failed in the last run of the "daily_sales_load" job and why?
-\`\`\`
-\`\`\`text
+```
+```
 Show me the last 5 runs of job 12345
-\`\`\`
+```
 
 Copilot calls the right tools in sequence, reads the results, and gives you a plain-English answer — no UI clicking required.
 
@@ -141,7 +129,7 @@ The tools are simple building blocks. The AI chains them together based on what 
 
 A good example is bootstrap error detection. Paste this into Copilot Chat:
 
-\`\`\`text
+```
 Scan all Databricks jobs for bootstrap failures:
 
 1. Call list_jobs to get every job
@@ -151,7 +139,7 @@ Scan all Databricks jobs for bootstrap failures:
    driver startup failures before job logic ran
 5. For confirmed bootstrap failures, call run_job to rerun
 6. Show a summary: jobs checked / failed / rerun / skipped with reason
-\`\`\`
+```
 
 Copilot works through every job, reads the actual error messages, judges whether each failure is truly a bootstrap error, reruns only those, and explains every decision. A 20-minute Monday morning task in one paste.
 
@@ -161,7 +149,6 @@ This is the difference from a script: a script answers one fixed question. Copil
 
 ## Code
 
-Full source: [kamathramu87/databricks-mcp-server](https://github.com/kamathramu87/databricks-mcp-server)`,
-};
+Full source: [kamathramu87/databricks-mcp-server](https://github.com/kamathramu87/databricks-mcp-server)
 
-export default post;
+Setup is about 10 minutes. The server itself is one Python file.
